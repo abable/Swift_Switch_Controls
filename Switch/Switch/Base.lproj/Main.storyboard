@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6jb-IK-9fW">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Switch-->
+        <scene sceneID="l4p-2N-K2i">
+            <objects>
+                <viewController title="Switch" id="6jb-IK-9fW" customClass="ViewController" customModule="Switch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8k7-UQ-sya">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYQ-Bq-MDl">
+                                <rect key="frame" x="182.5" y="537.5" width="51" height="31"/>
+                                <color key="onTintColor" red="1" green="0.99225149280000002" blue="0.001362889959" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" red="1" green="0.04830961332" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="stateChanged:" destination="6jb-IK-9fW" eventType="valueChanged" id="9i6-51-WLL"/>
+                                </connections>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yb9-it-6Sd">
+                                <rect key="frame" x="16" y="802" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DEH-tA-Ivu"/>
+                                </constraints>
+                                <state key="normal" title="Toggle"/>
+                                <connections>
+                                    <action selector="toggle:" destination="6jb-IK-9fW" eventType="touchUpInside" id="qwK-4t-21I"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bulb-off" highlightedImage="bulb-on" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-k3-2wf">
+                                <rect key="frame" x="117" y="307.5" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Dck-gn-th0"/>
+                                    <constraint firstAttribute="width" constant="180" id="I9N-Y6-jKe"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qbi-k3-2wf" firstAttribute="centerX" secondItem="JYQ-Bq-MDl" secondAttribute="centerX" id="2ff-Zj-0S9"/>
+                            <constraint firstItem="JYQ-Bq-MDl" firstAttribute="top" secondItem="Qbi-k3-2wf" secondAttribute="bottom" constant="50" id="9qv-uC-3nC"/>
+                            <constraint firstItem="JYQ-Bq-MDl" firstAttribute="centerX" secondItem="Yap-or-1bt" secondAttribute="centerX" id="B1p-bM-Kwd"/>
+                            <constraint firstItem="Yap-or-1bt" firstAttribute="bottom" secondItem="yb9-it-6Sd" secondAttribute="bottom" constant="20" id="GBM-WZ-Wwl"/>
+                            <constraint firstItem="JYQ-Bq-MDl" firstAttribute="centerY" secondItem="Yap-or-1bt" secondAttribute="centerY" constant="100" id="QNF-k8-l6V"/>
+                            <constraint firstItem="Yap-or-1bt" firstAttribute="trailing" secondItem="yb9-it-6Sd" secondAttribute="trailing" constant="16" id="acX-fy-YB8"/>
+                            <constraint firstItem="yb9-it-6Sd" firstAttribute="leading" secondItem="Yap-or-1bt" secondAttribute="leading" constant="16" id="dyo-ll-QvW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yap-or-1bt"/>
+                    </view>
+                    <connections>
+                        <outlet property="bulbImageView" destination="Qbi-k3-2wf" id="8eJ-B2-NTt"/>
+                        <outlet property="testSwitch" destination="JYQ-Bq-MDl" id="Hyv-Nu-9KZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4mu-RU-dqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="575" y="1404"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bulb-off" width="256" height="256"/>
+        <image name="bulb-on" width="256" height="256"/>
+    </resources>
+</document>
